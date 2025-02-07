@@ -26,3 +26,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: '8.12'
+
+      # Run de testen met de gradle wrapper (./gradlew build).
+      - name: Run tests
+        run: ./gradlew build
