@@ -33,6 +33,8 @@ jobs:
         run: ./gradlew build
   # Voeg een andere job toe (die mag parallel runnen met de bestaande job) die ./gradlew lint runt.
   linter:
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
