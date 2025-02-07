@@ -13,6 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        depth: 0
 
       #run ./build_version.sh and save the output in a variable
       - name: Get build version
@@ -29,4 +30,4 @@ jobs:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             channel: ${{ secrets.SLACK_CHANNEL_ID }}
-            text: "Push to main branch. New version: ${{ steps.build_version.outputs.version }}"
+            text: "Push to Maaikes main branch. New version: ${{ steps.build_version.outputs.version }}"
