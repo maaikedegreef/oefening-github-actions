@@ -13,7 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        depth: 0
+        with:
+          fetch-depth: 0
 
       #run ./build_version.sh and save the output in a variable
       - name: Get build version
