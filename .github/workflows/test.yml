@@ -14,6 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      #break the build
+      - name: Break the build
+        run: exit 1
+
       # Het project gebruikt gradle om de Kotlin testen te runnen. Je zal dus gradle en java moeten installeren, doe dit elk in een stap met behulp van bestaande actions.
       # Installeer java
       - name: Set up JDK 17
@@ -33,6 +37,7 @@ jobs:
         run: ./gradlew build
   # Voeg een andere job toe (die mag parallel runnen met de bestaande job) die ./gradlew lint runt.
   slack-message:
+    if: failure()
     runs-on: ubuntu-latest
 
     steps:
@@ -45,4 +50,4 @@ jobs:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             channel: ${{ secrets.SLACK_CHANNEL_ID }}
-            text: "howdy partnerssss :))"
+            text: "howdy partnerssss :)) Maaikes build is gefaald sip"
