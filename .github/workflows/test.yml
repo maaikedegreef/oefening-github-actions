@@ -4,6 +4,7 @@ on:
   # Zorg dat je de workflow kan triggeren door te pushen of gewoon door op een knop te duwen
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
