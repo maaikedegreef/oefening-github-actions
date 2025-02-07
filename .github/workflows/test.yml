@@ -45,4 +45,4 @@ jobs:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
           payload: |
             channel: ${{ secrets.SLACK_CHANNEL_ID }}
-            text: "howdy partnerssss"
+            text: "howdy partnerssss :))"
